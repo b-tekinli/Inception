@@ -36,6 +36,9 @@ Container, kendilerine ait processleri, servisleri, networkleri olan aynı işle
 
 Docker ise **LXC** container türünü kullanır. 
 
+- LXC Container Türü;
+
+Linux tabanlı bir işletim sisteminde çalışan konteyner sanallaştırma teknolojisidir. LXC konteynerleri, sistem kaynaklarının izolasyonu ve paylaşımıyla hafif ve verimlidir. Aynı çekirdek üzerinde çalıştıkları için sanal makinelerden daha düşük bellek kullanımı ve daha yüksek performans sunarlar. Bu nedenle LXC konteynerleri, uygulamaların hızlı bir şekilde başlatılmasını, ölçeklenmesini ve yönetilmesini sağlar. LXC konteynerleri, farklı uygulama senaryolarında kullanılabilir. Örneğin bir web sunucusu, veritabanı sunucusu gibi belirli bir uygulamayı çalıştırmak için kullanılabilir. 
 
 
 

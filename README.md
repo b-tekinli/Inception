@@ -41,9 +41,16 @@ Docker ise **LXC** container türünü kullanır.
 
 Linux tabanlı bir işletim sisteminde çalışan konteyner sanallaştırma teknolojisidir. LXC konteynerleri, sistem kaynaklarının izolasyonu ve paylaşımıyla hafif ve verimlidir. Aynı çekirdek üzerinde çalıştıkları için sanal makinelerden daha düşük bellek kullanımı ve daha yüksek performans sunarlar. Bu nedenle LXC konteynerleri, uygulamaların hızlı bir şekilde başlatılmasını, ölçeklenmesini ve yönetilmesini sağlar. LXC konteynerleri, farklı uygulama senaryolarında kullanılabilir. Örneğin bir web sunucusu, veritabanı sunucusu gibi belirli bir uygulamayı çalıştırmak için kullanılabilir. 
 
-** VM ile Container Arasındaki Farklar Nedir?
+<br />      <br />      <br />
 
-- HEr
+![Container VS VM](https://github.com/b-tekinli/Inception/blob/main/img/containervsvm.png)
+
+**VM ile Container Arasındaki Farklar Nedir?**
+
+- Her bir VM'in kendisine ait bir işletim sistemi var ama containerlarda yok. Çünkü containerlar yüklü oldukları işletim sisteminin çekirdeğini kullanır. 
+- Container düşük RAM kullanımı yaparken VM yüksek RAM kullanımı yapar.
+- Container düşük CPU kullanımı yaparken VM yüksek CPU kullanımı yapar.
+- Container daha az alana ihtiyaç duyarken VM daha fazla alana ihtiyaç duyar.
 
 
 

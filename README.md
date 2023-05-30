@@ -53,6 +53,11 @@ Linux tabanlı bir işletim sisteminde çalışan konteyner sanallaştırma tekn
 - Container daha az alana ihtiyaç duyarken VM daha fazla alana ihtiyaç duyar.
 
 
+## Dockerfile ve Docker Image Nedir?
+
+![Docker Image](https://github.com/b-tekinli/Inception/blob/main/img/dockerimage.png)
+
+İçerisinde birçok farklı yapıyı barındıran yapılardır. (OS, Application ve daha fazlası)
 
 
 

@@ -61,7 +61,12 @@ Linux tabanlı bir işletim sisteminde çalışan konteyner sanallaştırma tekn
 
 ![Docker Image](https://github.com/b-tekinli/Inception/blob/main/img/dockerimage.png)
 
-İçerisinde birçok farklı yapıyı barındıran yapılardır. (OS, Application ve daha fazlası)
+
+***Dockerfile:*** Dockerfile, Docker imajının nasıl oluşturulacağını ve yapılandırılacağını belirten metin tabanlı bir dosyadır. Uygulamanın çalışması için gereken adımları ve komutları içerir. Dockerfile, imajın yapılandırılması, bağımlılıkların yüklenmesi, dosyaların kopyalanması, çalışma komutlarının belirlenmesi gibi adımları tanımlar. Bu dosya üzerinde yapılan değişiklikler, imajın içeriğini etkiler.
+
+
+***Docker Image:*** İçerisinde birçok farklı yapıyı barındıran yapılardır (OS, Application ve daha fazlası). Bir uygulamanın çalıştırılması için gereken tüm dosyaları, bağımlılıkları, çalıştırma komutlarını ve ortamı içeren bir pakettir. Bir Docker imajı, Dockerfile dosyası veya başka bir imaj temel alınarak oluşturulur. İmajlar, katmanlar halinde depolanır ve her katman, önceki bir katman üzerindeki değişiklikleri temsil eder. Docker image'lar, Docker konteynerlerinin temel yapı taşıdır ve Docker komutlarıyla kullanılır. Docker Hub gibi merkezi imaj depolarında paylaşılabilir veya yerel bir Docker ortamında oluşturulabilir. [Docker HUB](https://hub.docker.com/)
+
 
 
 

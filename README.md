@@ -25,9 +25,9 @@ Docker, bir uygulamanın çalıştırılması için gereken tüm ortamı yani ya
 <br />      <br />      <br />
 
 
-![Container](https://beaglesecurity.com/blog/images/docker_840.png)
-
 ## Container Nedir?
+
+![Container](https://beaglesecurity.com/blog/images/docker_840.png)
 
 Container, kendilerine ait processleri, servisleri, networkleri olan aynı işletim sistemi veya VM üzerinde çalışan izole edilmiş ortamlardır ve işletim sisteminin kernel'ını kullanırlar. Konteyner teknolojisi, uygulamaları ve tüm gerekli bileşenleri bir araya getirerek uygulamaların farklı ortamlarda sorunsuz bir şekilde çalışmasını sağlar. Bununla birlikte konteynerler, aynı işletim sistemi çekirdeğini paylaşan ancak izole bir çevre sağlayan hafif ve taşınabilir bir yapıya sahiptir. Aslında yeni bir teknoloji değildir ve 3 tane container çeşidi vardır. Bunlar;
 - LXC
@@ -43,9 +43,10 @@ Linux tabanlı bir işletim sisteminde çalışan konteyner sanallaştırma tekn
 
 <br />      <br />      <br />
 
-![Container VS VM](https://github.com/b-tekinli/Inception/blob/main/img/containervsvm.png)
 
-**VM ile Container Arasındaki Farklar Nedir?**
+## VM ile Container Arasındaki Farklar Nedir?
+
+![Container VS VM](https://github.com/b-tekinli/Inception/blob/main/img/containervsvm.png)
 
 - Her bir VM'in kendisine ait bir işletim sistemi var ama containerlarda yok. Çünkü containerlar yüklü oldukları işletim sisteminin çekirdeğini kullanır. 
 - Container düşük RAM kullanımı yaparken VM yüksek RAM kullanımı yapar.

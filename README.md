@@ -7,9 +7,9 @@ Birkaç tane Docker image'i sanallaştıracağız, bu işlemi gerçekleştirmek 
 <br />      <br />
 
 
-![Docker](https://www.underworldcode.org/content/images/size/w600/2020/08/Moby-logo.png)
-
 ## Docker Nedir?
+
+![Docker](https://www.underworldcode.org/content/images/size/w600/2020/08/Moby-logo.png)
 
 Docker, bir uygulamanın çalıştırılması için gereken tüm ortamı yani yazılım kütüphaneleri, bağımlılıklar, yapılandırma vb. içeren bir sanal konteyner teknolojisidir. Bu konteynerler, uygulamaların farklı ortamlarda çalıştırılmasını ve uygulamanın doğru şekilde çalışması için ihtiyaç duyduğu her şeyi sağlar. Docker, uygulamaları hızlı ve tekrarlanabilir bir şekilde paketleyip dağıtmak için kullanılan bir konteynerizasyon platformudur. Konteynerler, izole bir ortamda çalışabilen uygulama ve bağımlılıklarını içerir. Docker sayesinde uygulamalar, herhangi bir ortamda tutarlı bir şekilde çalışabilir, hızlı dağıtılabilir, ölçeklenebilir ve izole edilebilir. Bu, yazılım geliştirme ve dağıtım süreçlerini kolaylaştırır ve sorunsuz çalışmasını sağlar.
 
@@ -22,7 +22,7 @@ Docker, bir uygulamanın çalıştırılması için gereken tüm ortamı yani ya
     3. Ölçeklenebilirlik: Docker, uygulamaları kolayca ölçeklendirmenizi sağlar. İhtiyaçlarınıza göre yeni konteynerler oluşturabilir ve böylece artan talepleri karşılayabilirsiniz. Bu, yüksek kullanıcı trafiği durumunda uygulamanızı ölçeklendirmek için esneklik sağlar.
 
 
-<br />      <br />      <br />
+<br />      <br />
 
 
 ## Container Nedir?
@@ -41,7 +41,7 @@ Docker ise **LXC** container türünü kullanır.
 
 Linux tabanlı bir işletim sisteminde çalışan konteyner sanallaştırma teknolojisidir. LXC konteynerleri, sistem kaynaklarının izolasyonu ve paylaşımıyla hafif ve verimlidir. Aynı çekirdek üzerinde çalıştıkları için sanal makinelerden daha düşük bellek kullanımı ve daha yüksek performans sunarlar. Bu nedenle LXC konteynerleri, uygulamaların hızlı bir şekilde başlatılmasını, ölçeklenmesini ve yönetilmesini sağlar. LXC konteynerleri, farklı uygulama senaryolarında kullanılabilir. Örneğin bir web sunucusu, veritabanı sunucusu gibi belirli bir uygulamayı çalıştırmak için kullanılabilir. 
 
-<br />      <br />      <br />
+<br />      <br />
 
 
 ## VM ile Container Arasındaki Farklar Nedir?
@@ -52,6 +52,9 @@ Linux tabanlı bir işletim sisteminde çalışan konteyner sanallaştırma tekn
 - Container düşük RAM kullanımı yaparken VM yüksek RAM kullanımı yapar.
 - Container düşük CPU kullanımı yaparken VM yüksek CPU kullanımı yapar.
 - Container daha az alana ihtiyaç duyarken VM daha fazla alana ihtiyaç duyar.
+
+
+<br />      <br />
 
 
 ## Dockerfile ve Docker Image Nedir?

@@ -76,6 +76,21 @@ Linux tabanlı bir işletim sisteminde çalışan konteyner sanallaştırma tekn
 Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine ve diğer popüler yazılımlara yönelik binlerce hazır konteyner imajı bulunabilir. Bu imajlar, kullanıcıların uygulamalarını hızlı bir şekilde başlatmalarını ve çalıştırmalarını sağlar. Ayrıca kullanıcıların kendi konteyner imajlarını da yüklemelerini ve paylaşmalarını sağlar. Bu, yazılım geliştiricilerin kendi uygulamalarını ve yapılandırmalarını başkalarıyla paylaşmalarını ve kolayca dağıtmalarını sağlar. Docker Hub'da, imajların sürümlerini yönetmek, güncellemeleri takip etmek ve imajların popülerliğini izlemek gibi ek özellikler de bulunmaktadır. Mesela **node.js** çalıştırmak istediğimizi varsayalım. Bunun için ```docker run node``` komutuyla aslında çalıştırılabilir örnek oluşturmuş olur buna da container denir. ```docker pull``` komutuyla da imajları bilgisayarımıza indirmiş oluruz. Mesela ```docker pull ubuntu``` komutunu yazdığımızda ubuntu'yu bilgisayarımızda localde docker host içinde arayacaktır ama bulamazsa docker hub üzerinden imajlarını çekecektir.
 
 
+<br />      <br />
+
+
+## Komutlar
+
+- ```docker ps```  :arrow_right: ayakta olan tüm containerları gösterir.
+- ```docker ps -a```  :arrow_right: geçmişe yönelik çalıştırılmış olan containerları listeler. (bunun yerine ```docker ps --all``` komutu da kullanılabilir.)
+- ```docker container ls```  :arrow_right: aktif olan containerları listeler.
+- ```docker container ls -a```  :arrow_right: aktif olmayan containerları listeler.
+- ```docker rm container_name```  :arrow_right: aktif olmayan containerları temizler. (container adı yerine container id'si de kullanılabilir.)
+- 
+- 
+
+
+
 
 
 

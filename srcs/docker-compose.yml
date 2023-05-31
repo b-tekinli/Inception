@@ -1,0 +1,75 @@
+version: '3'
+services:
+
+  nginx:
+    build: requirements/nginx/
+    container_name: nginx
+    image: nginx
+    ports:
+      - 443:443
+    volumes:
+      - wp:/var/www/html
+    depends_on:
+      - wordpress
+    networks:
+      - asgard
+    restart: always
+
+  wordpress:
+    image: wordpress
+    build: requirements/wordpress/
+    container_name: wordpress
+    volumes:
+      - wp:/var/www/html
+    depends_on:
+      - mariadb
+    networks:
+      - asgard
+    restart: always
+    environment:
+      MYSQL_HOST:       ${MYSQL_HOST}
+      WP_DATABASE_NAME: ${WP_DATABASE_NAME}
+      WP_DATABASE_USR:  ${WP_DATABASE_USR}
+      WP_DATABASE_PWD:  ${WP_DATABASE_PWD}
+      DOMAIN_NAME:      ${DOMAIN_NAME}
+      WP_TITLE:         ${WP_TITLE}
+      WP_ADMIN_USR:     ${WP_ADMIN_USR}
+      WP_ADMIN_PWD:     ${WP_ADMIN_PWD}
+      WP_ADMIN_EMAIL:   ${WP_ADMIN_EMAIL}
+      WP_USR:           ${WP_USR}
+      WP_PWD:           ${WP_PWD}
+      WP_EMAIL:         ${WP_EMAIL}
+
+  mariadb:
+    image: mariadb
+    build: requirements/mariadb/
+    container_name: mariadb
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - asgard
+    restart: always
+    environment:
+      MYSQL_ROOT_PWD:   ${MYSQL_ROOT_PWD}
+      WP_DATABASE_NAME: ${WP_DATABASE_NAME}
+      WP_DATABASE_USR:  ${WP_DATABASE_USR}
+      WP_DATABASE_PWD:  ${WP_DATABASE_PWD}
+
+volumes:
+  wp:
+    driver: local
+    name: WordPress
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/btekinli/data/wordpress
+  db:
+    driver: local
+    name: DB
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/btekinli/data/mariadb
+
+networks:
+  asgard:

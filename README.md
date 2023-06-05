@@ -85,7 +85,7 @@ Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine v
 - ```docker ps -a```  :arrow_right: geçmişe yönelik çalıştırılmış olan containerları listeler. (bunun yerine ```docker ps --all``` komutu da kullanılabilir.)
 - ```docker container ls```  :arrow_right: aktif olan containerları listeler.
 - ```docker container ls -a```  :arrow_right: aktif olmayan containerları listeler.
-- ```docker rm container_name```  :arrow_right: aktif olmayan containerları temizler. (container adı yerine container id'si de kullanılabilir.)
+- ```docker rm container_name```  :arrow_right: aktif olmayan containerları temizler. (container adı yerine container id'si de kullanılabilir.) 
 - 
 - 
 

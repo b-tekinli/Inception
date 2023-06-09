@@ -103,10 +103,23 @@ Port mapping, docker containerlarının dış dünyayla iletişim kurmasını sa
 
 Port mapping  işlemi, bir docker containerının içinde çalışan uygulamanın belirli bir portunu docker hostunun bir portuna bağlamayı sağlar. Bu, dış dünyadan docker containerına erişimi mümkün kılar. Örneğin, bir web sunucusunu çalıştıran bir docker containerında, containerın içindeki 80 numaralı portu docker hostunun 8080 numaralı portuna yönlendirebiliriz. Böylece docker hostunun 8080 numaralı portuna gelen istekler docker containerında çalışan web sunucusuna iletilir.
 
+```docker run -p 8080:80 nginx```
+
 Aynı zamanda hangi portlara yönlendirebileceğini ve hangi hostla eşleştirileceğini docker komut satırı veya docker-compose dosyası üzerinden yapılandırılabiliriz.
 
 
-Docker Host üzerinde container'lar **stateless** olarak çalışırlar. Yani herhangi bir bilgi içerisinde kayıt edilmez. Container durdurulduğunda kayıt ettiğimiz bilgiler sonsuza kadar silinir.
+<br />      <br />
+
+
+## Volume Mapping
+
+![Volume Mapping](https://miro.medium.com/v2/resize:fit:1200/1*xONk464vW-xNYxzE_HsSkw.png)
+
+Docker Host üzerinde container'lar **stateless** olarak çalışırlar. Yani herhangi bir bilgi içerisinde kayıt edilmez. Container durdurulduğunda ya da yeniden başlatıldığında kayıt ettiğimiz bilgiler sonsuza kadar silinir yani veriler kaybolabilir. Ancak bazı durumlarda kalıcı veri saklama veya veri paylaşımı gerekebilir. İşte bu noktada Docker Volume Mapping devreye girer.
+
+Docker containerının belirli bir dosya veya dizinini docker hostundaki bir dosya veya dizine bağlar. Böylece containerın içindeki veriler docker hostunun dosya sistemine yazılır ve kalıcı olarak saklanır. Ayrıca birden fazla docker containerı arasında veri paylaşımını da mümkün kılar.
+
+Port Mapping gibi docker-compose dosyasını hangi dosyanın bağlanacağını belirtmek için yapılandırabiliriz. Örneğin, bir veritabanı containerı için veri saklamak amacıyla containerın içindeki "/var/lib/mysql" dizini docker ana bilgisayarının "/mydata" dizinine bağlanabilir.
 
 
 <br />      <br />

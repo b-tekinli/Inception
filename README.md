@@ -87,7 +87,15 @@ Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine v
 - ```docker container ls -a```  :arrow_right: aktif olmayan containerları listeler.
 - ```docker rm container_name```  :arrow_right: aktif olmayan containerları temizler. (container adı yerine container id'si de kullanılabilir.) 
 - ```docker images```   :arrow_right: latest tagı ile işaretlenmiş en son sürümdeki imajları listeler.
-- ``` ```
-- 
+- ```docker container logs container_id```  :arrow_right: var olan logları gösterir.
+
+
+<br />      <br />
+
+
+## Port Mapping
+
+
+
 
 

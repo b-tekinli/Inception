@@ -95,7 +95,7 @@ Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine v
 
 ## Port Mapping
 
-
+Ağ cihazları arasında iletişim sağlamak için kullanılan bir yönlendirme tekniğidir. IP tabanlı ağlarda, her bir cihazın bir IP adresi ve her bir uygulamanın da bir port numarası vardır. Port mapping, belirli bir port numarasına gelen trafiği ağdaki belirli bir cihaza veya hizmete yönlendirmek için kullanılır. 
 
 
 

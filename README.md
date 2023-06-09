@@ -100,4 +100,9 @@ Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine v
 Containerlar docker'ın kendine ait olan networkü olan docker host üzerinde çalışır. Her container kendine ait bir port üzerinden servis edilir. Port mapping, ağ cihazları arasında iletişim sağlamak için kullanılan bir yönlendirme tekniğidir. IP tabanlı ağlarda, her bir cihazın bir IP adresi ve her bir uygulamanın da bir port numarası vardır. Port mapping, belirli bir port numarasına gelen trafiği ağdaki belirli bir cihaza veya hizmete yönlendirmek için kullanılır. 
 
 
+<br />      <br />
+
+
+### Kaynak
+[kablosuzkedi Docker Playlist / Gökhan Kandemir](https://youtube.com/playlist?list=PL_f2F0Oyaj4_xkCDqnRWp4p5ypjDeC0kO)
 

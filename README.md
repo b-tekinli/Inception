@@ -93,11 +93,20 @@ Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine v
 <br />      <br />
 
 
-## Port Mapping
+## Port Mapping (Port Yönlendirme)
 
 ![Port Mapping](https://iximiuz.com/docker-publish-container-ports/docker-engine-port-publishing-2000-opt.png)
 
-Containerlar docker'ın kendine ait olan networkü olan docker host üzerinde çalışır. Her container kendine ait bir port üzerinden servis edilir. Port mapping, ağ cihazları arasında iletişim sağlamak için kullanılan bir yönlendirme tekniğidir. IP tabanlı ağlarda, her bir cihazın bir IP adresi ve her bir uygulamanın da bir port numarası vardır. Port mapping, belirli bir port numarasına gelen trafiği ağdaki belirli bir cihaza veya hizmete yönlendirmek için kullanılır. 
+Containerlar docker'ın kendine ait olan networkü olan docker host (ana bilgisayar) üzerinde çalışır. Her container kendine ait bir port üzerinden servis edilir. Port mapping, ağ cihazları arasında iletişim sağlamak için kullanılan bir yönlendirme tekniğidir. IP tabanlı ağlarda, her bir cihazın bir IP adresi ve her bir uygulamanın da bir port numarası vardır. Port mapping, belirli bir port numarasına gelen trafiği ağdaki belirli bir cihaza veya hizmete yönlendirmek için kullanılır. 
+
+Port mapping, docker containerlarının dış dünyayla iletişim kurmasını sağlamak için kullanılan bir yöntemdir. Bir docker containerı çalıştırıldığında container içinde çalışan uygulama bir veya daha fazla ağ portunu kullanabilir. Ancak bu portlara doğrudan erişim containerın izole edilmiş yapısı nedeniyle sınırlıdır.
+
+Port mapping  işlemi, bir docker containerının içinde çalışan uygulamanın belirli bir portunu docker hostunun bir portuna bağlamayı sağlar. Bu, dış dünyadan docker containerına erişimi mümkün kılar. Örneğin, bir web sunucusunu çalıştıran bir docker containerında, containerın içindeki 80 numaralı portu docker hostunun 8080 numaralı portuna yönlendirebiliriz. Böylece docker hostunun 8080 numaralı portuna gelen istekler docker containerında çalışan web sunucusuna iletilir.
+
+Aynı zamanda hangi portlara yönlendirebileceğini ve hangi hostla eşleştirileceğini docker komut satırı veya docker-compose dosyası üzerinden yapılandırılabiliriz.
+
+
+Docker Host üzerinde container'lar **stateless** olarak çalışırlar. Yani herhangi bir bilgi içerisinde kayıt edilmez. Container durdurulduğunda kayıt ettiğimiz bilgiler sonsuza kadar silinir.
 
 
 <br />      <br />

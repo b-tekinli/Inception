@@ -126,5 +126,27 @@ Port Mapping gibi docker-compose dosyasını hangi dosyanın bağlanacağını b
 <br />      <br />
 
 
+## Docker Network Türleri
+
+Docker'da, default olarak sunulan bazı network türleri bulunurken aynı zamanda kullanıcılar tarafından tanımlanabilen özelleştirilmiş ağ türleri de oluşturulabilir. Bunlar 2'ye ayrılır;
+
+1) Default Network Türleri
+- Bridge Network (Köprü Ağı): Docker'ın default ağ türüdür. Containerlar, aynı bridge networke bağlanarak birbirleriyle iletişim kurabilirler. Her container için benzersiz bir IP adresi atanır ve Docker Daemon tarafından otomatik olarak bir köprü ağı oluşturulur.
+- Host Network (Ana Bilgisayar Ağı): Containerların Docker host networkünün ağında çalıştığı bir ağ türüdür. Containerlar, kendi ayrı bir ağının olmadığı ve Docker host networkünün ağ arayüzünü doğrudan kullanabildiği bir yapıdır.
+- None Network: None ağı, containerın herhangi bir ağa bağlanmadığı bir ağ türüdür. Containerın kendi ağ arayüzü olmayacak ve dış dünyayla doğrudan iletişim kuramayacaktır.
+
+2) Kullanıcı Tanımlı Network Türleri
+Docker, kullanıcıların kendi ağ türlerini tanımlamalarına olanak tanır. Kullanıcı tanımlı ağlar, Docker-compose dosyaları veya Docker CLI aracılığıyla oluşturulabilir. Kullanıcılar, ağın özelliklerini, yapılandırmasını ve davranışını belirleyebilir.
+- Overlay Network (Bindirme Ağı): Overlay ağı, Docker Swarm gibi dağıtık uygulama ortamlarında kullanılan bir ağ türüdür. Farklı Docker host networkündeki containerlar arasında iletişimi sağlar.
+- Macvlan Network: Macvlan ağı, containerların fiziksel ağa doğrudan bağlanmasını sağlayan bir ağ türüdür. Containerlar, fiziksel ağdaki diğer cihazlar gibi davranır ve Docker host networkünün fiziksel ağına doğrudan bağlanır.
+- Custom Bridge Network (Özel Köprü Ağı): Kullanıcılar, ihtiyaçlarına göre özel köprü ağları oluşturabilirler. Özel köprü ağları, belirli bir container grubu arasında izole iletişim sağlamak veya farklı ağ yapılandırmaları için kullanılabilir.
+
+
+<br />      <br />
+
+
+
+
+
 ### Kaynak
 [kablosuzkedi Docker Playlist / Gökhan Kandemir](https://youtube.com/playlist?list=PL_f2F0Oyaj4_xkCDqnRWp4p5ypjDeC0kO)

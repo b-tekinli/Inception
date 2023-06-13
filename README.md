@@ -87,6 +87,7 @@ Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine v
 - ```docker container ls -a```  :arrow_right: aktif olmayan containerları listeler.
 - ```docker rm container_name```  :arrow_right: aktif olmayan containerları temizler. (container adı yerine container id'si de kullanılabilir.) 
 - ```docker images```   :arrow_right: latest tagı ile işaretlenmiş en son sürümdeki imajları listeler.
+- ```docker rmi containerName```     :arrow_right: containerName adındaki images'ı siler.
 - ```docker container logs container_id```  :arrow_right: var olan logları gösterir.
 - ```docker inspect container_id/container_name```  :arrow_right: belirli bir docker containerının veya imajın ayrıntılı bilgilerini görüntüler.
 - ```docker rmi container_name```   :arrow_right: container kaldırmak için kullanılır.
@@ -141,8 +142,8 @@ Docker, kullanıcıların kendi ağ türlerini tanımlamalarına olanak tanır. 
 - Macvlan Network: Macvlan ağı, containerların fiziksel ağa doğrudan bağlanmasını sağlayan bir ağ türüdür. Containerlar, fiziksel ağdaki diğer cihazlar gibi davranır ve Docker host networkünün fiziksel ağına doğrudan bağlanır.
 - Custom Bridge Network (Özel Köprü Ağı): Kullanıcılar, ihtiyaçlarına göre özel köprü ağları oluşturabilirler. Özel köprü ağları, belirli bir container grubu arasında izole iletişim sağlamak veya farklı ağ yapılandırmaları için kullanılabilir.
 
-```docker network ls```     :arrow_right: networkleri listelemeye yarar.
-
+- ```docker network ls```     :arrow_right: networkleri listelemeye yarar.
+- ```docker network rm networkName```     :arrow_right: networkName adındaki network'ü kaldırmaya yarar.
 
 <br />      <br />
 

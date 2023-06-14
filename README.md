@@ -91,6 +91,7 @@ Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine v
 - ```docker container logs container_id```  :arrow_right: var olan logları gösterir.
 - ```docker inspect container_id/container_name```  :arrow_right: belirli bir docker containerının veya imajın ayrıntılı bilgilerini görüntüler.
 - ```docker rmi container_name```   :arrow_right: container kaldırmak için kullanılır.
+- ```docker container prune```     :arrow_right: stop edilmiş containerların hepsini siler.
 
 <br />      <br />
 

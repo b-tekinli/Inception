@@ -198,6 +198,13 @@ ENTRYPOINT [ "sh", "/tmp/configure.sh" ]
 komutu shell ile `/tmp/configure.sh` çalıştırır.
 
 
+6. ```EXPOSE``` : Docker imajının hangi ağ portlarını dinleyeceğini belirtir. Containerın dış dünyaya hangi portlardan erişileceğini belirtir.
+```dockerfile
+EXPOSE 3000
+```
+komutu 3000 portunu dinler.
+
+
 <br />      <br />
 
 

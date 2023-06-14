@@ -164,11 +164,37 @@ komutu, imajın temel olarak Alpine Linux 3.13 sürümünü kullanacağını bel
 
     - `alpine:3.13`, Docker Hub üzerinde bulunan ve Alpine Linux adı verilen hafif bir Linux dağıtımının 3.13 sürümünü temsil eder. Alpine Linux, minimal boyutta bir Linux dağıtımıdır ve Docker containerlarında yaygın olarak kullanılır. Alpine Linux, küçük boyutu, hızlı başlatma süreleri ve güvenlik odaklı yapısıyla öne çıkar. Bu imaj üzerinde diğer komutlar ve yapılandırmalar ile birlikte bir Docker imajı oluşturulabilir.
 
-2. ```RUN``` : Docker imajının içinde çalışacak komutları çalıştırır. Bu komut, komut satırında çalıştırılacak herhangi bir işlemi gerçekleştirmek için kullanılır. Örneğin, RUN apt-get update komutu, imaj içinde paket yöneticisini günceller.
 
-3. ```COPY``` : 
-4. ```WORKDIR``` : 
-5. ```ENTRYPOINT``` : 
+2. ```RUN``` : Docker imajının içinde çalışacak komutları çalıştırır. Bu komut, komut satırında çalıştırılacak herhangi bir işlemi gerçekleştirmek için kullanılır. Örneğin,
+
+```dockerfile
+RUN apk update
+```
+komutu, imaj içinde paket yöneticisini günceller.
+
+
+3. ```COPY``` : Docker imajına dosya veya dizinleri kopyalamak için kullanılır. Belirtilen kaynak dosyasını Docker imajına kopyalamayı sağlar.
+
+```dockerfile
+COPY conf/index.html /tmp/index.html
+```
+komutu, `index.html` dosyası Docker imajına kopyalanır ve `/tmp/index.html` konumuna yerleştirilir. Bu kopyalama işlemi, Docker imajının yapılandırması sırasında gerçekleşir ve imajın içine dosya eklenir. Bu dosya, Docker containerı çalıştığında `/tmp/index.html` konumunda bulunabilir ve kullanılabilir hale gelir.
+
+
+4. ```WORKDIR``` : Docker imajında çalışma dizinini belirtir. Sonraki komutların çalışacağı default çalışma dizinini belirler. Örneğin,
+
+```dockerfile
+WORKDIR /var/www/html/wordpress
+```
+komutu ile çalışma dizini `/var/www/html/wordpress` olarak ayarlar.
+
+
+5. ```CMD ve ENTRYPOINT``` : Docker konteynerinin başlatılması için çalışacak komut veya komut dizisini belirtir. CMD komutu, varsayılan olarak çalışacak komut veya parametreleri belirtirken, ENTRYPOINT komutu her zaman çalışacak olan komut veya komut dizisini belirtir. Örneğin,
+
+```dockerfile
+ENTRYPOINT [ "sh", "/tmp/configure.sh" ]
+```
+komutu shell ile `/tmp/configure.sh` çalıştırır.
 
 
 <br />      <br />

@@ -145,11 +145,56 @@ Docker, kullanıcıların kendi ağ türlerini tanımlamalarına olanak tanır. 
 - ```docker network ls```     :arrow_right: networkleri listelemeye yarar.
 - ```docker network rm networkName```     :arrow_right: networkName adındaki network'ü kaldırmaya yarar.
 
+
 <br />      <br />
 
 
-## 
+## Dockerfile
 
+Docker containerlarını oluşturmak için kullanılan bir metin dosyasıdır. Bir proje veya uygulamanın nasıl bir Docker imajına dönüştürüleceğini tanımlayan adımları içerir. Dockerfile'da kullanılan komutlar, Docker imajının yapılandırmasını, bağımlılıklarını ve run-time davranışlarını belirler.
+
+1. `FROM` : Docker imajının temelini oluşturan başlangıç noktasını belirtir. Docker imajının hangi base'e (tabana) inşa edileceğini belirler. Örneğin, 
+
+```dockerfile
+FROM alpine:3.13
+```
+komutu, imajın temel olarak Alpine Linux 3.13 sürümünü kullanacağını belirtir.
+
+    - `alpine:3.13`, Docker Hub üzerinde bulunan ve Alpine Linux adı verilen hafif bir Linux dağıtımının 3.13 sürümünü temsil eder. Alpine Linux, minimal boyutta bir Linux dağıtımıdır ve Docker containerlarında yaygın olarak kullanılır. Alpine Linux, küçük boyutu, hızlı başlatma süreleri ve güvenlik odaklı yapısıyla öne çıkar. Bu imaj üzerinde diğer komutlar ve yapılandırmalar ile birlikte bir Docker imajı oluşturulabilir.
+
+2. ```RUN``` : Docker imajının içinde çalışacak komutları çalıştırır. Bu komut, komut satırında çalıştırılacak herhangi bir işlemi gerçekleştirmek için kullanılır. Örneğin, RUN apt-get update komutu, imaj içinde paket yöneticisini günceller.
+
+3. ```COPY``` : 
+4. ```WORKDIR``` : 
+5. ```ENTRYPOINT``` : 
+
+
+<br />      <br />
+
+
+## CMD ve ENTRYPOINT Arasındaki Fark Nedir?
+
+Docker containerının nasıl başlatılacağını belirlemek için Dockerfile içinde kullanılan 2 farklı komuttur. 
+
+`CMD` komutu,  Docker containerı başlatıldığında default olarak çalışacak komut veya parametreleri belirtmek için kullanılır. Bir Dockerfile'da yalnızca bir tane CMD komutu olabilir. Eğer birden fazla CMD komutu bulunuyorsa yalnızca en son tanımlanan CMD komutu geçerli olur. Kullanıcının başlangıç komutlarını ve argümanlarını geçersiz kılabilmesine olanak sağlar. Örneğin, bir CMD komutu şu şekilde tanımlanabilir:
+
+```dockerfile
+CMD ["node", "app.js"]
+```
+Bu komut Docker containerı çalıştırıldığında `node app.js` komutunu çalıştırır. 
+
+`ENTRYPOINT` komutu, Docker containerı başlatıldığında her zaman çalıştırılacak olan bir komut veya komut dizisini belirtmek için kullanılır. Yalnızca bir kez tanımlanabilir. Eğer birden fazla tanımlanırsa yalnızca en son tanımlanan geçerli olur. Kullanıcının başlangıç komutlarını geçersiz kılmaz, ancak kullanıcı tarafından Docker containerını başlatırken geçilen komutlar ENTRYPOINT komutu tarafından çalıştırılan komutların veya komut dizisinin argümanları olarak işlenir. Örneğin:
+
+```dockerfile
+ENTRYPOINT ["echo", "Hello"]
+```
+
+Bu komut Docker containerı çalıştırıldığında `echo Hello` komutunu çalıştırır. Containerı başlatırken ek komutlar veya argümanlar geçilebilir bu geçilen komutlar `ENTRYPOINT` komutunun argümanları olarak işlenecektir.
+
+Özetle CMD komutu, default olarak çalışacak komutları belirtir ve geçersiz kılabilirken, ENTRYPOINT komutu ise her zaman çalışacak komutları belirtir ve geçilen komutları argüman olarak alır.
+
+
+<br />     <br />
 
 
 ### Kaynak

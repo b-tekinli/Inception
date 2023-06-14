@@ -129,7 +129,7 @@ Port Mapping gibi docker-compose dosyasını hangi dosyanın bağlanacağını b
 
 ## Docker Network Türleri
 
-![docker host](https://github.com/b-tekinli/Inception/blob/main/img/docker.png)
+![docker host](https://miro.medium.com/v2/resize:fit:1400/1*WKiEgPXO8XXppoqgr7ZVQA.png)
 
 Docker'da, default olarak sunulan bazı network türleri bulunurken aynı zamanda kullanıcılar tarafından tanımlanabilen özelleştirilmiş ağ türleri de oluşturulabilir. Bunlar 2'ye ayrılır;
 

@@ -233,5 +233,16 @@ Bu komut Docker containerı çalıştırıldığında `echo Hello` komutunu çal
 <br />     <br />
 
 
+## Docker Compose
+
+Birden fazla containerın tek bir yapılandırma dosyası aracılığıyla yönetmek ve çalıştırmak için kullanılan bir araçtır. Docker Compose, YAML formatındaki bir dosya olan "docker-compose.yml" dosyasını kullanır. Bu dosyada, Docker containerlarının yapılandırmaları, ilişkileri, ağ bağlantıları, ortam değişkenleri, port eşlemeleri vb. tanımlanır. Docker Compose dosyası, birden çok servis veya containerın yapılandırmasını tek bir dosyada toplamak için kullanılır.
+`docker-compose` komutuyla çalıştırılır. Bu komut Docker Compose dosyasının bulunduğu dizinde çalıştırıldığında dosyadaki containerların başlatılması, durdurulması, yeniden oluşturulması, güncellenmesi gibi işlemler Docker Compose tarafından yönetilir. Farklı containerlar arasında bağımlılıkların tanımlanması, containerların aynı ağda çalışması, kaynak paylaşımı gibi kolaylıklar sağlar. Birden çok containerın aynı zamanda başlatılması ve durdurulması işlemleri otomatik olarak gerçekleştirilebilir.
+
+
+
+
+<br />     <br />
+
+
 ### Kaynak
 [kablosuzkedi Docker Playlist / Gökhan Kandemir](https://youtube.com/playlist?list=PL_f2F0Oyaj4_xkCDqnRWp4p5ypjDeC0kO)

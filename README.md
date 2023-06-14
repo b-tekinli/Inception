@@ -154,14 +154,14 @@ Docker, kullanıcıların kendi ağ türlerini tanımlamalarına olanak tanır. 
 
 ## Dockerfile
 
-Docker containerlarını oluşturmak için kullanılan bir metin dosyasıdır. Bir proje veya uygulamanın nasıl bir Docker imajına dönüştürüleceğini tanımlayan adımları içerir. Dockerfile'da kullanılan komutlar, Docker imajının yapılandırmasını, bağımlılıklarını ve run-time davranışlarını belirler.
+Docker containerlarını oluşturmak için kullanılan bir metin dosyasıdır. Bir proje veya uygulamanın nasıl bir Docker imajına dönüştürüleceğini tanımlayan adımları içerir. Dockerfile'da kullanılan komutlar, Docker imajının yapılandırmasını, bağımlılıklarını ve run-time davranışlarını belirler. [Dockerfile](https://github.com/b-tekinli/Inception/blob/main/srcs/requirements/mariadb/Dockerfile)
 
 1. `FROM` : Docker imajının temelini oluşturan başlangıç noktasını belirtir. Docker imajının hangi base'e (tabana) inşa edileceğini belirler. Örneğin, 
 
 ```dockerfile
 FROM alpine:3.13
 ```
-komutu, imajın temel olarak Alpine Linux 3.13 sürümünü kullanacağını belirtir. [Dockerfile](https://github.com/b-tekinli/Inception/blob/main/srcs/requirements/mariadb/Dockerfile)
+komutu, imajın temel olarak Alpine Linux 3.13 sürümünü kullanacağını belirtir. 
 
     - `alpine:3.13`, Docker Hub üzerinde bulunan ve Alpine Linux adı verilen hafif bir Linux dağıtımının 3.13 sürümünü temsil eder. Alpine Linux, minimal boyutta bir Linux dağıtımıdır ve Docker containerlarında yaygın olarak kullanılır. Alpine Linux, küçük boyutu, hızlı başlatma süreleri ve güvenlik odaklı yapısıyla öne çıkar. Bu imaj üzerinde diğer komutlar ve yapılandırmalar ile birlikte bir Docker imajı oluşturulabilir.
 
@@ -310,14 +310,41 @@ services:
 ```
 
 
-7.
+7. `environment` : Bir servisin çalışma zamanında kullanacağı ortam değişkenlerini belirtir.
+
+```docker-compose.yml
+services:
+    mariadb:
+        environment:
+          MYSQL_ROOT_PWD:   ${MYSQL_ROOT_PWD}
+          WP_DATABASE_NAME: ${WP_DATABASE_NAME}
+          WP_DATABASE_USR:  ${WP_DATABASE_USR}
+          WP_DATABASE_PWD:  ${WP_DATABASE_PWD}
+```
 
 
+8. `depends_on` : Bir servisin başlamadan önce bağımlı olduğu diğer servisleri belirtir. Bu şekilde, servislerin sıralı bir şekilde başlatılması sağlanabilir.
 
+```docker-compose.yml
+services:
+    wordpress:
+        depends_on:
+          - mariadb
+```
+
+
+9. `networks` : Docker ağlarıyla ilgili yapılandırmaları belirtir. Örneğin, özel bir ağ oluşturmak veya mevcut bir ağa bağlanmak için kullanılabilir.
+
+```docker-compose.yml
+services:
+    nginx:
+        networks:
+          - asgard
+```
 
 
 <br />     <br />
 
 
 ### Kaynak
-[kablosuzkedi Docker Playlist / Gökhan Kandemir](https://youtube.com/playlist?list=PL_f2F0Oyaj4_xkCDqnRWp4p5ypjDeC0kO)
+[kablosuzkedi Docker Playlist / Gökhan Kandemir](https://youtube.com/playlist?list=PL_f2F0Oyaj4_xkCDqnRWp4p5ypjDeC0kO

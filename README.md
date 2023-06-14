@@ -161,7 +161,7 @@ Docker containerlarını oluşturmak için kullanılan bir metin dosyasıdır. B
 ```dockerfile
 FROM alpine:3.13
 ```
-komutu, imajın temel olarak Alpine Linux 3.13 sürümünü kullanacağını belirtir.
+komutu, imajın temel olarak Alpine Linux 3.13 sürümünü kullanacağını belirtir. [Dockerfile](https://github.com/b-tekinli/Inception/blob/main/srcs/requirements/mariadb/Dockerfile)
 
     - `alpine:3.13`, Docker Hub üzerinde bulunan ve Alpine Linux adı verilen hafif bir Linux dağıtımının 3.13 sürümünü temsil eder. Alpine Linux, minimal boyutta bir Linux dağıtımıdır ve Docker containerlarında yaygın olarak kullanılır. Alpine Linux, küçük boyutu, hızlı başlatma süreleri ve güvenlik odaklı yapısıyla öne çıkar. Bu imaj üzerinde diğer komutlar ve yapılandırmalar ile birlikte bir Docker imajı oluşturulabilir.
 
@@ -235,8 +235,83 @@ Bu komut Docker containerı çalıştırıldığında `echo Hello` komutunu çal
 
 ## Docker Compose
 
+![docker compose](https://intellipaat.com/blog/wp-content/uploads/2022/12/image-16.png)
+
 Birden fazla containerın tek bir yapılandırma dosyası aracılığıyla yönetmek ve çalıştırmak için kullanılan bir araçtır. Docker Compose, YAML formatındaki bir dosya olan "docker-compose.yml" dosyasını kullanır. Bu dosyada, Docker containerlarının yapılandırmaları, ilişkileri, ağ bağlantıları, ortam değişkenleri, port eşlemeleri vb. tanımlanır. Docker Compose dosyası, birden çok servis veya containerın yapılandırmasını tek bir dosyada toplamak için kullanılır.
 `docker-compose` komutuyla çalıştırılır. Bu komut Docker Compose dosyasının bulunduğu dizinde çalıştırıldığında dosyadaki containerların başlatılması, durdurulması, yeniden oluşturulması, güncellenmesi gibi işlemler Docker Compose tarafından yönetilir. Farklı containerlar arasında bağımlılıkların tanımlanması, containerların aynı ağda çalışması, kaynak paylaşımı gibi kolaylıklar sağlar. Birden çok containerın aynı zamanda başlatılması ve durdurulması işlemleri otomatik olarak gerçekleştirilebilir.
+
+
+### `docker-compose.yml` Dosyası
+
+Docker Compose tarafından kullanılan bir yapılandırma dosyasıdır. [docker-compose.yml](https://github.com/b-tekinli/Inception/blob/main/srcs/docker-compose.yml)
+
+1. `version` : docker-compose.yml dosyasının sürümünü belirtir. Örneğin,
+
+```docker-compose.yml
+version: 3
+```
+
+
+2. `services` : Docker containerlarının yapılandırmasını tanımlayan bölümdür. Burada her bir servis veya container için ayrı bir blok bulunur. Servisler, adlarıyla tanımlanır ve her bir servis için ayrıca komutlar, bağımlılıklar, port eşlemeleri, ortam değişkenleri vb. belirtilebilir. Örneğin,
+
+```docker-compose.yml
+services:
+  nginx:
+    build: requirements/nginx/
+    container_name: nginx
+    image: nginx
+    ports:
+      - 443:443
+    volumes:
+      - wp:/var/www/html
+    depends_on:
+      - wordpress
+    networks:
+      - asgard
+    restart: always
+```
+
+
+3. `image` : Bir servis için kullanılacak Docker imajını belirtir. Bu, Docker Hub'daki bir imaj adı veya özel bir Docker imajı olabilir. Örneğin,
+
+```docker-compose.yml
+services:
+    wordpress:
+        image: wordpress
+```
+
+
+4. `build` : Bir servis için Dockerfile'ın konumunu belirtir. Bu, local bir Dockerfile veya bir remote Git reposu olabilir. Dockerfile belirtilirse, Docker imajı oluşturulurken bu Dockerfile kullanılır. Örneğin,
+
+```docker-compose.yml
+services:
+    mariadb:
+        build: requirements/mariadb/
+```
+
+
+5. `ports` : Bir servisin container hosttaki bir portla eşlemek için kullanılır. host-portu:container-portu şeklinde belirtilir. Örneğin,
+
+```docker-compose.yml
+services:
+    nginx:
+        ports:
+          - 443:443
+```
+
+
+6. `volumes` : Bir servisin conatiner içindeki bir dizini veya dosyayı hosttaki bir dizinle paylaşmak için kullanılır. host-dizini:container-dizini şeklinde belirtilir.
+
+```docker-compose.yml
+services:
+    wordpress:
+        volumes:
+          - wp:/var/www/html
+```
+
+
+7.
+
 
 
 

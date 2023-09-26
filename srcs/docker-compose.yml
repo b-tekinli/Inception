@@ -1,8 +1,8 @@
-version: '3.5'
+version: "3.5"
 
 networks:
   nw:
-    name: webapp_network
+    name: my_network42
     driver: bridge
 
 volumes:
@@ -12,58 +12,55 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/btekinli/data/wordpress
+      device: /home/btekinli/data/wp
   db:
     driver: local
     name: db_volume
     driver_opts:
       type: none
       o: bind
-      device: /home/btekinli/data/mariadb
-
+      device: /home/btekinli/data/db
 
 services:
+ 
   mariadb:
-    image: mariadb
     container_name: mariadb
     build: ./requirements/mariadb
-    ports:
-      - "3306:3306"
+    env_file:
+      - ./.env
     networks:
       - nw
-    restart: always
+    restart: unless-stopped
     volumes:
       - db:/var/lib/mysql
-
+      
   wordpress:
-    image: wordpress
     container_name: wordpress
     build: ./requirements/wordpress
     env_file:
       - ./.env
-    ports:
-      - "9000:9000"
     networks:
       - nw
     depends_on:
       - mariadb
-    restart: always
+    restart: unless-stopped
     volumes:
       - wp:/var/www/html
 
   nginx:
-    image: nginx
     container_name: nginx
     build: ./requirements/nginx
     env_file:
       - ./.env
     ports:
-      - "80:80"
       - "443:443"
     depends_on:
+      - mariadb
       - wordpress
     volumes:
       - wp:/var/www/html
     networks:
       - nw
-    restart: always
+    restart: unless-stopped
+
+  

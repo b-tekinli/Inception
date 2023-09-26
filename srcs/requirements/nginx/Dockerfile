@@ -1,12 +1,15 @@
-FROM debian:buster
+FROM debian:10
 
 RUN apt-get update
 RUN apt-get install -y nginx openssl
 
-COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
+EXPOSE 443
+
+COPY ./conf/default /etc/nginx/sites-enabled/default
 COPY ./tools/nginx_start.sh /var/www
 
 RUN chmod +x /var/www/nginx_start.sh
+
 ENTRYPOINT [ "var/www/nginx_start.sh" ]
 
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]

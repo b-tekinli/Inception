@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS wordpress;
-CREATE USER IF NOT EXISTS 'btekinli'@'%' IDENTIFIED BY 'force99';
+CREATE USER IF NOT EXISTS 'btekinli'@'%' IDENTIFIED BY '123';
 GRANT ALL PRIVILEGES ON wordpress.* TO 'btekinli'@'%';
 FLUSH PRIVILEGES;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootforce99';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root123';

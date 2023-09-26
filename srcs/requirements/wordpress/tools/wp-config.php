@@ -26,7 +26,7 @@ define( 'DB_NAME', 'wordpress' );
 define( 'DB_USER', 'btekinli');
 
 /** Database password */
-define( 'DB_PASSWORD', 'force99');
+define( 'DB_PASSWORD', '123');
 
 /** Database hostname */
 define( 'DB_HOST', 'mariadb' );
@@ -39,15 +39,15 @@ define( 'DB_COLLATE', '' );
 
 //** Redis cache settings. */
 define('WP_CACHE', true);
-define('WP_CACHE_KEY_SALT', 'btekinli@wordpress.com');
+define('WP_CACHE_KEY_SALT', 'btekinli@karabayyazilim.com');
 
 //** Try Redis container */
-// define('WP_REDIS_HOST', 'redis');
-// define('WP_REDIS_PORT', 6379);
+define('WP_REDIS_HOST', 'redis');
+define('WP_REDIS_PORT', 6379);
 // define( 'WP_REDIS_PASSWORD', '$REDIS_PWD' );
-// define('WP_REDIS_TIMEOUT', 1);
-// define('WP_REDIS_READ_TIMEOUT', 1);
-// define('WP_REDIS_DATABASE', 0);
+define('WP_REDIS_TIMEOUT', 1);
+define('WP_REDIS_READ_TIMEOUT', 1);
+define('WP_REDIS_DATABASE', 0);
 
 /**#@+
  * Authentication unique keys and salts.

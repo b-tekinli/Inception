@@ -39,7 +39,7 @@ define( 'DB_COLLATE', '' );
 
 //** Redis cache settings. */
 define('WP_CACHE', true);
-define('WP_CACHE_KEY_SALT', 'btekinli@karabayyazilim.com');
+define('WP_CACHE_KEY_SALT', 'btekinli@btekinli.com');
 
 //** Try Redis container */
 define('WP_REDIS_HOST', 'redis');

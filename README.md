@@ -125,6 +125,8 @@ Docker containerının belirli bir dosya veya dizinini docker hostundaki bir dos
 
 Port Mapping gibi docker-compose dosyasını hangi dosyanın bağlanacağını belirtmek için yapılandırabiliriz. Örneğin, bir veritabanı containerı için veri saklamak amacıyla containerın içindeki "/var/lib/mysql" dizini docker ana bilgisayarının "/mydata" dizinine bağlanabilir.
 
+```docker volume ls``` :arrow_right: mevcut docker volumelerini listeleyerek, veri yönetimi ve verilerin saklanması için kullanılabilecek kaynakları görüntüler.
+
 
 <br />      <br />
 

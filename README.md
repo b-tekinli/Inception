@@ -27,7 +27,8 @@ Docker, bir uygulamanın çalıştırılması için gereken tüm ortamı yani ya
 
 ## Container Nedir?
 
-![Container](https://www.intekfreight-logistics.com/hubfs/intermodal%20containers%20in%20rail%20ramp-1.jpeg)
+![Container](https://github.com/b-tekinli/Inception/assets/64313175/eefa8043-09b4-4538-acf8-9e465a14b900)
+
 
 Konteynerler, izole bir ortamda çalışabilen uygulama ve bağımlılıklarını içerir. Container, kendilerine ait processleri, servisleri, networkleri olan aynı işletim sistemi veya VM üzerinde çalışan izole edilmiş ortamlardır ve işletim sisteminin kernel'ını kullanırlar. Konteyner teknolojisi, uygulamaları ve tüm gerekli bileşenleri bir araya getirerek uygulamaların farklı ortamlarda sorunsuz bir şekilde çalışmasını sağlar. Bununla birlikte konteynerler, aynı işletim sistemi çekirdeğini paylaşan ancak izole bir çevre sağlayan hafif ve taşınabilir bir yapıya sahiptir. Aslında yeni bir teknoloji değildir ve 3 tane container çeşidi vardır. Bunlar;
 - LXC

@@ -31,12 +31,16 @@ Docker, bir uygulamanın çalıştırılması için gereken tüm ortamı yani ya
 
 
 Container, kendilerine ait processleri, servisleri, networkleri olan aynı işletim sistemi veya VM üzerinde çalışan izole edilmiş ortamlardır ve işletim sisteminin kernel'ını kullanırlar. Container teknolojisi, uygulamaları ve tüm gerekli bileşenleri bir araya getirerek uygulamaların farklı ortamlarda sorunsuz bir şekilde çalışmasını sağlar. Bununla birlikte aynı işletim sistemi çekirdeğini paylaşan ancak izole bir çevre sağlayan hafif ve taşınabilir bir yapıya sahiptir. Aslında yeni bir teknoloji değildir ve 3 tane container çeşidi vardır. Bunlar;
-LXC
-LXD
-LXCFS
+
+- LXC
+- LXD
+- LXCFS
 
 Docker ise LXC container türünü kullanır.
-LXC Container Türü;
+
+<br />
+
+<b> LXC Container Türü; </b>     <br /> 
 Linux tabanlı bir işletim sisteminde çalışan container sanallaştırma teknolojisidir. LXC konteynerleri, sistem kaynaklarının izolasyonu ve paylaşımıyla hafif ve verimlidir. Aynı çekirdek üzerinde çalıştıkları için sanal makinelerden daha düşük bellek kullanımı ve daha yüksek performans sunarlar. Bu nedenle LXC konteynerleri, uygulamaların hızlı bir şekilde başlatılmasını, ölçeklenmesini ve yönetilmesini sağlar. LXC konteynerleri, farklı uygulama senaryolarında kullanılabilir. Örneğin bir web sunucusu, veritabanı sunucusu gibi belirli bir uygulamayı çalıştırmak için kullanılabilir. 
 
 <br />      <br />
@@ -140,7 +144,7 @@ Docker'da, default olarak sunulan bazı network türleri bulunurken aynı zamand
 - Host Network (Ana Bilgisayar Ağı): Containerların Docker host networkünün ağında çalıştığı bir ağ türüdür. Containerlar, kendi ayrı bir ağının olmadığı ve Docker host networkünün ağ arayüzünü doğrudan kullanabildiği bir yapıdır.
 - None Network: None ağı, containerın herhangi bir ağa bağlanmadığı bir ağ türüdür. Containerın kendi ağ arayüzü olmayacak ve dış dünyayla doğrudan iletişim kuramayacaktır.
 
-2) Kullanıcı Tanımlı Network Türleri
+2) Kullanıcı Tanımlı Network Türleri <br />
 Docker, kullanıcıların kendi ağ türlerini tanımlamalarına olanak tanır. Kullanıcı tanımlı ağlar, Docker-compose dosyaları veya Docker CLI aracılığıyla oluşturulabilir. Kullanıcılar, ağın özelliklerini, yapılandırmasını ve davranışını belirleyebilir.
 - Overlay Network (Bindirme Ağı): Overlay ağı, Docker Swarm gibi dağıtık uygulama ortamlarında kullanılan bir ağ türüdür. Farklı Docker host networkündeki containerlar arasında iletişimi sağlar.
 - Macvlan Network: Macvlan ağı, containerların fiziksel ağa doğrudan bağlanmasını sağlayan bir ağ türüdür. Containerlar, fiziksel ağdaki diğer cihazlar gibi davranır ve Docker host networkünün fiziksel ağına doğrudan bağlanır.

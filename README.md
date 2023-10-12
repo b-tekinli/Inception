@@ -303,7 +303,7 @@ services:
 ```
 
 
-6. `volumes` : Bir servisin conatiner içindeki bir dizini veya dosyayı hosttaki bir dizinle paylaşmak için kullanılır. host-dizini:container-dizini şeklinde belirtilir.
+6. `volumes` : Bir servisin container içindeki bir dizini veya dosyayı hosttaki bir dizinle paylaşmak için kullanılır. host-dizini:container-dizini şeklinde belirtilir.
 
 ```docker-compose.yml
 services:

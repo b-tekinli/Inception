@@ -103,7 +103,7 @@ Docker Hub'da, farklı uygulama türlerine, veritabanlarına, ağ servislerine v
 
 ![Port Mapping](https://iximiuz.com/docker-publish-container-ports/docker-engine-port-publishing-2000-opt.png)
 
-Containerlar docker'ın kendine ait olan networkü olan docker host (ana bilgisayar) üzerinde çalışır. Her container kendine ait bir port üzerinden servis edilir. Port mapping, ağ cihazları arasında iletişim sağlamak için kullanılan bir yönlendirme tekniğidir. IP tabanlı ağlarda, her bir cihazın bir IP adresi ve her bir uygulamanın da bir port numarası vardır. Port mapping, belirli bir port numarasına gelen trafiği ağdaki belirli bir cihaza veya hizmete yönlendirmek için kullanılır. 
+Containerlar docker'ın kendine ait networkü olan docker host (ana bilgisayar) üzerinde çalışır. Her container kendine ait bir port üzerinden servis edilir. Port mapping, ağ cihazları arasında iletişim sağlamak için kullanılan bir yönlendirme tekniğidir. IP tabanlı ağlarda, her bir cihazın bir IP adresi ve her bir uygulamanın da bir port numarası vardır. Port mapping, belirli bir port numarasına gelen trafiği ağdaki belirli bir cihaza veya hizmete yönlendirmek için kullanılır. 
 
 Port mapping, docker containerlarının dış dünyayla iletişim kurmasını sağlamak için kullanılan bir yöntemdir. Bir docker containerı çalıştırıldığında container içinde çalışan uygulama bir veya daha fazla ağ portunu kullanabilir. Ancak bu portlara doğrudan erişim containerın izole edilmiş yapısı nedeniyle sınırlıdır.
 
